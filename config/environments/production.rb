@@ -2,7 +2,14 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  ActionMailer::Base.smtp_settings =   {
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :domain             => 'gmail.com', #you can also use google.com
+    :authentication     => :plain,
+    :user_name          => ENV['GMAIL_LOGIN'],
+    :password           => ENV['GMAIL_PWD']
+  }
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
