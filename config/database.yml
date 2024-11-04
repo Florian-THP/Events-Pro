@@ -77,9 +77,9 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
-#
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+  url: 'postgres://ub0hgeutakp5bb:p515a9fb79c4f2c57017e6c711e18ace9ca5dd25c7431aab29e515007111baa4c@cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d4bc7k1iuv8895'
+  database: 'd4bc7k1iuv8895'
+  username: 'ub0hgeutakp5bb'
+  password: 'p515a9fb79c4f2c57017e6c711e18ace9ca5dd25c7431aab29e515007111baa4c'
