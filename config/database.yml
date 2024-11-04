@@ -79,7 +79,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 production:
   <<: *default
-  url: 'postgres://ub0hgeutakp5bb:p515a9fb79c4f2c57017e6c711e18ace9ca5dd25c7431aab29e515007111baa4c@cfls9h51f4i86c.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d4bc7k1iuv8895'
-  database: 'd4bc7k1iuv8895'
-  username: 'ub0hgeutakp5bb'
-  password: 'p515a9fb79c4f2c57017e6c711e18ace9ca5dd25c7431aab29e515007111baa4c'
+  url: 'postgres://u2n6arbj6tgkmn:pb1942ca4ba54dbff5f02c2439d1e2b72d24fea74c9d71f09ca62e2482675837e@c8m0261h0c7idk.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d50ju26o1gpf65'
+  database: 'd50ju26o1gpf65'
+  username: 'u2n6arbj6tgkmn'
+  password: 'pb1942ca4ba54dbff5f02c2439d1e2b72d24fea74c9d71f09ca62e2482675837e'
