@@ -104,4 +104,17 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   # 
   #
+  #
+  #
+  config.action_mailer.perform_deliveries = true
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['GMAIL_USERNAME'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :domain => 'gmail.com',
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  
 end
