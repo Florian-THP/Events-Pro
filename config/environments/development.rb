@@ -1,8 +1,20 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address: 'smtp.gmail.com',
+  port: 587,
+  domain: 'gmail.com',
+  user_name: ENV['GMAIL_LOGIN'], # Remplacez par votre adresse Gmail
+  password: ENV['GMAIL_PWD'],     # Remplacez par votre mot de passe ou mot de passe d'application
+  authentication: 'plain',
+  enable_starttls_auto: true
+}
+
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
