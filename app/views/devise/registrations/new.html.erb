@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Myapp" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= stylesheet_link_tag 'log', media: 'all' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+   
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="gridleft">
+    <%= image_tag "people.png", class: "peopleimg", alt: "people" %>
+  </div>
+
+  <div class="gridright">
+
+<h1>Sign up</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email, class: "label"  %><br />
+      <div class="in">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputlog" %>
+  </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "label"  %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+      <div class="in">
+    <%= f.password_field :password, autocomplete: "new-password", class: "inputlog" %>
+  </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "label"  %><br />
+      <div class="in">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inputlog" %>
+  </div>
+</div>
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btncologin" %>
+  </div>
+<% end %>
+<br />
+<br />
+<%= render "devise/shared/links" %>
+</body>
+</html>

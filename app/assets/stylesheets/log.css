@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+    background-image: none;
+    background-color: #000000;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.btnco {
+    margin-left: 10px;
+    background-color: #FFFFFF;
+    color: #111111;
+    border: 1px solid #111111;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.gridleft, .gridright {
+    height: 90vh;
+}
+
+.gridleft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+}
+
+.gridright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 45%;
+}
+
+.peopleimg {
+    width: 95%;
+    border-radius: 40px;
+}
+
+.label {
+   color: grey;
+   font-size: 14px;
+   letter-spacing: -0.2px;
+}
+
+.in {
+    height: 40px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #171717;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.inputlog {
+   background-color: transparent;
+   height: 40px;
+   width: 80%;
+   color: #FFFFFF;
+   font-size: 16px;
+   padding-left: 10px;
+   border: none;
+}
+
+input, textarea {
+    outline: 0;
+}
+
+.btncologin {
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #dfdfdf;
+    border: none;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.field {
+    color: #adadad;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+
+h1 {
+    color: #FFFFFF;
+    letter-spacing: -2px;
+}

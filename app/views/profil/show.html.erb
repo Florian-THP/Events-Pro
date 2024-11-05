@@ -1,0 +1,19 @@
+<!-- app/views/users/show.html.erb -->
+<h1><%= @user.first_name %> <%= @user.last_name %> Profile</h1>
+<p>Email: <%= @user.email %></p>
+<p>Description: <%= @user.description %></p>
+<a href="<%= edit_user_registration_path %>">Edit email / password</a>
+
+<h2>Événements créés :</h2>
+<% if @events.any? %>
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <a href="<%= event_path(event) %>"><%= event.title %></a>
+       
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Aucun événement créé.</p>
+<% end %>

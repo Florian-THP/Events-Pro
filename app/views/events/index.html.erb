@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Myapp" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= stylesheet_link_tag 'index', media: 'all' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body>
+<main>
+<h1>
+  <%= image_tag "calend.png", class: "calendimg", alt: "calend" %>
+  Find your </br>favorite event.
+  </h1>
+ <a class="create" href="<%= new_event_path %>">
+ Create Events
+  <%= image_tag "arrow.png", class: "arrow", alt: "arrow" %>
+ </a>
+
+
+<div class="events-container">
+  <% @events.each_slice(2) do |events_row| %>  <!-- Chaque "slice" contiendra 3 événements -->
+    <div class="events-row">
+      <% events_row.each do |event| %>
+        <div class="event">
+          <h2><%= event.title %></h2>
+          <p class="descrievent"><%= event.description %></p>
+         <div class="infoevent">
+           <p class="infop">
+            <%= image_tag "price.png", class: "price", alt: "price" %>
+              <%= event.price %>€
+            </p>
+
+           <p class="infop">
+             <%= image_tag "time.png", class: "time", alt: "time" %>
+              <%= event.duration %> minutes
+            </p>
+
+           <p class="infop">
+             <%= image_tag "maps.png", class: "maps", alt: "maps" %>
+             <%= event.location %>
+            </p>
+         </div>
+         <div class="bottomevent">
+          <p class="datevent"><%= event.start_date %></p>
+          <a class="look" href="<%= event_path(event) %>">
+          Voir
+           <%= image_tag "arrow.png", class: "arrow", alt: "arrow" %>
+          </a>
+        </div>
+         </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+</main>
+</body>
+</html>

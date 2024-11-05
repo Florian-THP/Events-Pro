@@ -4,6 +4,7 @@
     <title><%= content_for(:title) || "Myapp" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,6 +19,82 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      
+  <% if user_signed_in? %>
+    <div class="liennav">
+          <a href="<%= root_path %>">Home</a>
+          <a href="<%= new_event_path %>">New Events</a>
+       </div>
+    <div>
+     
+     <div class="dropdown">
+       
+  <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">
+   <%= image_tag "user.png", class: "usericon", alt: "user" %>
+   Profil
+  <%= image_tag "arrowuser.png", class: "arrowicon", alt: "arrow" %>
+  </a>
+  <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+    <a class="lienprofil" href="<%= profil_path(current_user)%>">
+    <p class="linkprofil">Profil</p>
+     <%= image_tag "user.png", class: "usericon", alt: "user" %>
+    </a>
+    <%= form_with(url: destroy_user_session_path, method: :delete, local: true) do %>
+      <%= submit_tag "Disconnect", class: "btndeco", data: { confirm: 'Êtes-vous sûr de vouloir vous déconnecter ?' } %>
+    <% end %>
+    </div>
+  </div>
+
+
+    </div>
+  <% else %>
+    <!-- Dropdown "S'inscrire / Se connecter" si le visiteur n'est pas connecté -->
+  
+      <div class="btncodiv"> <div class="liennav">
+          <a href="<%= root_path %>">Home</a>
+          <a href="<%= new_event_path %>">New Events</a>
+       </div>
+         
+      <a class="btninscri" href="<%= new_user_registration_path %>">Sign Up</a>
+
+       <a class="btnco" href="<%= new_user_session_path %>">Sign In</a>
+
+      </div>
+   
+  <% end %>
+</nav>
+<%= yield %>
+
+<script>
+  function toggleDropdown() {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const arrowIcon = document.querySelector(".arrowicon");
+    
+    // Change l'affichage du menu dropdown
+    const isDropdownVisible = dropdownMenu.style.display === "block";
+    dropdownMenu.style.display = isDropdownVisible ? "none" : "block";
+    
+    // Applique la rotation à l'icône de flèche
+    if (isDropdownVisible) {
+      arrowIcon.classList.remove("rotate");
+    } else {
+      arrowIcon.classList.add("rotate");
+    }
+  }
+  
+  // Fermer le dropdown si l'utilisateur clique en dehors
+  window.onclick = function(event) {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const arrowIcon = document.querySelector(".arrowicon");
+    
+    if (!event.target.matches('.dropdown-toggle')) {
+      // Fermer le dropdown
+      dropdownMenu.style.display = "none";
+      arrowIcon.classList.remove("rotate"); // Réinitialiser la rotation
+    }
+  }
+</script>
+
   </body>
 </html>

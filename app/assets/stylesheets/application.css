@@ -1,15 +1,148 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+    background-image: url("Hero.png"); /* Remplacez avec le chemin de votre image */
+    background-size: cover; /* L'image couvrira tout l'écran */
+    background-repeat: no-repeat; /* Évite que l'image se répète */
+    background-position: center; /* Centrer l'image */
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #111111;
+}
+
+nav {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: #111111;
+}
+
+.btncodiv {
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+}
+
+.btninscri, .btnco {
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnco {
+    margin-left: 10px;
+    background-color: #111111;
+    color: #FFFFFF;
+    border: 1px solid #111111;
+}
+
+.btninscri {
+    border: 1px solid rgb(43, 43, 43);
+}
+
+.dropdown-menu {
+    background-color: #000000;
+    border: 1px solid #171717;
+    margin-top: 10px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    width: 170px;
+    color: #111111;
+    margin-left: -20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.dropdown-toggle {
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #111111;
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.5px;
+    margin-right: 20px;
+}
+
+.dropdown-toggle:active {
+    transform: scale(0.99);
+}
+
+
+
+.lienprofil {
+    background-color: rgb(33, 33, 33);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.linkprofil {
+    margin-left: 10px;
+}
+
+.btndeco {
+    background-color: #000000;
+    color: #ff0037;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btndeco:hover {
+    border: 1px solid red;
+}
+
+.usericon {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.arrowicon {
+    width: 13px;
+    margin-left: 15px;
+}
+
+.arrowicon.rotate {
+    transform: rotate(180deg);
+}
+
+.liennav {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    width: 150px;
+    justify-content: space-between;
+    letter-spacing: -1px;
+    margin-right: 30px;
+}
+

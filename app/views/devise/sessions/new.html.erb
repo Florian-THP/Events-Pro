@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Myapp" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= stylesheet_link_tag 'log', media: 'all' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+   
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="gridleft">
+    <%= image_tag "people.png", class: "peopleimg", alt: "people" %>
+  </div>
+
+  <div class="gridright">
+    <h1>Sign In</h1>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email, class: "label" %><br/>
+    <div class="in">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputlog"  %>
+  </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "label" %><br />
+     <div class="in">
+    <%= f.password_field :password, autocomplete: "current-password", class: "inputlog"  %>
+  </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: "btncologin" %>
+  </div>
+<% end %>
+<br />
+<br />
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</body>
+</html>
