@@ -94,6 +94,11 @@ input, textarea {
     color: #000000;
 }
 
+.btninscri {
+    border: 1px solid rgb(210, 210, 210);
+    background-color: #000000;
+}
+
 .field {
     color: #adadad;
     font-size: 14px;

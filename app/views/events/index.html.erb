@@ -30,7 +30,9 @@
  </a>
 
 
+
 <div class="events-container">
+  <h3>Our Featured Events:</h3>
   <% @events.each_slice(2) do |events_row| %>  <!-- Chaque "slice" contiendra 3 événements -->
     <div class="events-row">
       <% events_row.each do |event| %>
@@ -45,7 +47,7 @@
 
            <p class="infop">
              <%= image_tag "time.png", class: "time", alt: "time" %>
-              <%= event.duration %> minutes
+              <%= event.duration %>min
             </p>
 
            <p class="infop">
@@ -57,7 +59,7 @@
           <p class="datevent"><%= event.start_date %></p>
           <a class="look" href="<%= event_path(event) %>">
           Voir
-           <%= image_tag "arrow.png", class: "arrow", alt: "arrow" %>
+           <%= image_tag "arrowtwo.png", class: "arrow", alt: "arrow" %>
           </a>
         </div>
          </div>

@@ -40,10 +40,10 @@ h1 {
 }
 
 .look {
-    background-color: #111111;
+    background-color: #FFFFFF;
+    color: #111111;
     height: 35px;
     width: 110px;
-    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +59,7 @@ h1 {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 30px;
   }
   
   .events-row {
@@ -69,12 +69,30 @@ h1 {
   }
   
   .event {
-    width: 49%; /* Ajuster pour s'assurer que 3 éléments tiennent bien sur la ligne */
+    background-color: #111111;
+    width: 49%; 
     cursor: pointer;
-    box-shadow: 0px 20px 20px rgb(226, 226, 226);
+    box-shadow: 0px 20px 20px rgb(238, 238, 238);
     padding: 10px;
     border-radius: 20px;
     box-sizing: border-box;
+    border: 1px solid rgb(232, 232, 232);
+    color: #FFFFFF;
+  }
+
+  .eventshow {
+    background-color: #111111;
+    width: 49%; 
+    cursor: pointer;
+    box-shadow: 0px 20px 20px rgb(238, 238, 238);
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgb(232, 232, 232);
+    color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
   }
 
   .event:hover {
@@ -83,7 +101,7 @@ h1 {
   
   h2 {
     font-size: 20px;
-    color: rgb(77, 77, 77);
+    color: rgb(255, 255, 255);
     margin-left: 20px;
     display: flex;
     justify-content: space-between;
@@ -92,6 +110,8 @@ h1 {
   .descrievent {
     margin-left: 40px;
     max-width: 540px;
+    color: rgb(152, 152, 152);
+    letter-spacing: -1px;
   }
 
   .datevent {
@@ -116,12 +136,16 @@ h1 {
     margin-top: -10px;
   }
 
- .time, .maps {
+  
+
+ .maps {
     width: 20px;
+    margin-right: 5px;
   }
 
-  .price {
+  .price, .time {
     width: 25px;
+    margin-right: 5px;
   } 
 
   .bottomevent {
@@ -129,13 +153,9 @@ h1 {
     justify-content: space-between;
   }
 
-  .eventshow {
-    width: 49%; /* Ajuster pour s'assurer que 3 éléments tiennent bien sur la ligne */
-    cursor: pointer;
-    box-shadow: 0px 20px 20px rgb(226, 226, 226);
-    padding: 10px;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
+  h3 {
+    font-size: 30px;
+    letter-spacing: -1.6px;
+    font-weight: 400;
   }
+
