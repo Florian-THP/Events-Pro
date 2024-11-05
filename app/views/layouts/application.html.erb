@@ -23,7 +23,8 @@
       
   <% if user_signed_in? %>
     <div class="liennav">
-          <a href="<%= root_path %>">Home</a>
+      <%= image_tag "logo.png", class: "logo", alt: "logo" %>
+          <a class="homelink" href="<%= root_path %>">Home</a>
           <a href="<%= new_event_path %>">New Events</a>
        </div>
     <div>
@@ -50,8 +51,10 @@
   <% else %>
     <!-- Dropdown "S'inscrire / Se connecter" si le visiteur n'est pas connecté -->
   
-      <div class="btncodiv"> <div class="liennav">
-          <a href="<%= root_path %>">Home</a>
+    
+        <div class="liennav">
+         <%= image_tag "logo.png", class: "logo", alt: "logo" %>
+          <a class="homelink" href="<%= root_path %>">Home</a>
           <a href="<%= new_event_path %>">New Events</a>
        </div>
          

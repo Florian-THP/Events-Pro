@@ -109,3 +109,11 @@ h1 {
     color: #FFFFFF;
     letter-spacing: -2px;
 }
+
+.logo {
+    display: none;
+}
+
+.liennav {
+    width: 140px;
+}
